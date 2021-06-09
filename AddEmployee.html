@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./css/style.css"/>
+    <script type="text/javascript" src="./js/EmployeePayrollData.js"></script>
+    <script type="text/javascript" src="./js/FormValidation.js"></script>
     <title>Employee Payroll Form</title>
 </head>
 <body>
@@ -27,6 +29,7 @@
             <div class="row-content">
                 <label for="name" class="label text">Name</label>
                 <input type="text" id="name" name="Name" placeholder="Your Name ..."required class="input">
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label for="profile" class="label text">Profile Image</label>
@@ -152,6 +155,7 @@
                             <option value="2021">2020</option>
                             <option value="2021">2021</option>
                         </select>
+                        <error-output class="date-error" for="text"></error-output>
                     </div>
                 </div>
                 <div class="row-content">
