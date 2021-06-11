@@ -104,9 +104,10 @@ const getSelectedValue = (propertyValue) => {
     return setItem;
 }
 
-const setTextValue = (id, message) => {
-    const textError = document.querySelector(id);
-    textError.textContent = message;
+const setTextValue = (message) => {
+    // const element = document.querySelector(id);
+    // element.textContent = message;
+    document.getElementsByClassName(".salary-output").innerHTML = message;
 }
 
 
@@ -132,7 +133,7 @@ const resetForm = () => {
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
     setValue('#salary', ' ');
-    setTextValue(".salary-output", '400000');
+    setTextValue('400000');
     setValue('#notes', ' ');
     setValue('#day', '1');
     setValue('#month', 'Jan');

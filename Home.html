@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0.600;1,500&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./css/homePage.css">
+    <title>Home Page</title>
 </head>
 <body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="./assets/images/logo.png" alt="Logo">
+            <div>
+                <span class="emp-text">EMPLOYEE</span>
+                <br>
+                <span class="emp-text emp-payroll">PAYROLL</span>
+            </div>
+        </div>
+    </header>
+
+    <!--(Day-47) UC-2 To create Header Section with Employee Details-->
+    <div class="main-content">
+        <div class="header-content sub-main-content">
+            <div class="emp-detail-text">
+                Employee Details<div class="emp-count">1</div>
+            </div>
+            <a class="add-button" href="AddEmployee.html"><img src="./assets/icons/add-24px.svg" alt="Icon">Add User</a>
+        </div>
+
+        <!--(Day-47) UC-3 To view EmployeePayroll Details in Tabular Format-->
+        <div class="table-main">
+            <table class="table" id="display">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td><img src="./assets/profile-images/Ellipse -3.png"></td>
+                    <td>Rajat</td>
+                    <td>Male</td>
+                    <td>
+                        <div class="dept-label">HR</div>
+                        <div class="dept-label">Sales</div>
+                    </td >
+                    <td>400000</td>
+                    <td>1 Nov 2020</td>
+                    <td>
+                        <img src="./assets/icons/delete-black-18dp.svg" alt="Delete">
+                        <img src="./assets/icons/create-black-18dp.svg" alt="Edit">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
     
 </body>
 </html>
