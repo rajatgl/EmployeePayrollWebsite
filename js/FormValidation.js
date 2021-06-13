@@ -81,8 +81,8 @@ const createEmployeePayroll = () => {
     employeePayrollData.profilePic = getSelectedValue('[name = profile]').pop();
     employeePayrollData.gender = getSelectedValue('[name = gender]').pop();
     employeePayrollData.department = getSelectedValue('[name = department]');
-    employeePayrollData.salary = getSelectedValue('#salary');
-    employeePayrollData.note = getSelectedValue('#notes');
+    employeePayrollData.salary = getInputValueId('#salary');
+    employeePayrollData.note = getInputValueId('#notes');
     console.log(employeePayrollData);
 
     return employeePayrollData;
@@ -105,9 +105,9 @@ const getSelectedValue = (propertyValue) => {
 }
 
 const setTextValue = (message) => {
-    // const element = document.querySelector(id);
-    // element.textContent = message;
-    document.getElementsByClassName(".salary-output").innerHTML = message;
+    const element = document.querySelector(id);
+    element.textContent = message;
+    //document.getElementsByClassName(".salary-output").innerHTML = message;
 }
 
 

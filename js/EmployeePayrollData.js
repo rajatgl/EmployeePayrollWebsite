@@ -1,15 +1,10 @@
 class EmployeePayrollData {
 
-    get id(){return this._id}
-    //UC14: regex check for id
-    set id(id){
-        const ID_REGEX = /^[1-9]+[0-9]*/
-        if(ID_REGEX.test(id)){
-            this._id = id
-            return;
-        }
-        else
-            throw "Invalid employeeId"
+    get id() {
+        return this._id;
+    }
+    set id(id) {
+        this._id = id;
     }
 
     get name(){return this._name}
@@ -33,11 +28,7 @@ class EmployeePayrollData {
 
     get gender(){return this._gender}
     set gender(gender){
-        const GENDER_REGEX = /^[F/M/undefined]{1}/
-        if(GENDER_REGEX.test(gender))
-            this._gender = gender
-        else
-            throw "Invalid gender" 
+            this._gender = gender   
     }
     
     get department(){
@@ -48,28 +39,33 @@ class EmployeePayrollData {
     }
 
     get salary(){return this._salary}
-    set salary(salary){
-        const SALARY_REGEX = /^[1-9]+[0-9]*(\.[0-9]+)?/
-        if(SALARY_REGEX.test(salary))
-            this._salary = salary
-        else
-            throw "Invalid salary"
+    set salary(salary)
+    {
+        this._salary = salary
     }
 
     get startDate(){return this._startDate}
-    set startDate(startdate){
-        let date
-        const currentDate = new Date()
-        if(startdate!=undefined){
-            startdate = startdate.split("/")
-            date = new Date(startdate[2],startdate[1]-1,startdate[0])
-        }
-        if(startdate == undefined||date.getTime()<=currentDate.getTime()){
-            this._startDate = startdate
-            return;
-        }
-        else
-            throw "Invalid Date"
+    set startDate(startDate){
+        // let date
+        // const currentDate = new Date()
+        // if(startdate!=undefined){
+        //     startdate = startdate.split("/")
+        //     date = new Date(startdate[2],startdate[1]-1,startdate[0])
+        // }
+        // if(startdate == undefined||date.getTime()<=currentDate.getTime()){
+        //     this._startDate = startdate
+        //     return;
+        // }
+        // else
+        //     throw "Invalid Date"
+        let currentDate = new Date();
+        if (startDate > currentDate)
+            throw "Start Date is a future date";
+        var diff = Math.abs(currentDate.getTime - startDate.getTime);
+        if(diff / (1000*60*60*24) > 30){
+            throw "Start Date is a beyond 30 days";
+        } 
+        this._startDate = startDate;    
     }
 
     get node(){
